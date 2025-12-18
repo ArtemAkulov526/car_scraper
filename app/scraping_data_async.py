@@ -111,9 +111,10 @@ async def main():
             await browser.close()
 
 if __name__ == "__main__":
-    from db import save_cars_to_db
+    from db import save_cars_to_db, init_db
     
     async def runner():
+        await init_db() #run once to create db
         results = await main()  
         await save_cars_to_db(results)  
 
