@@ -1,0 +1,3 @@
+*.PNG
+.env
+/__pycache__/

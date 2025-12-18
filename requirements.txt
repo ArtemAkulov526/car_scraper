@@ -1,0 +1,4 @@
+playwright==1.52.*
+SQLAlchemy==2.0.43
+asyncpg==0.29.*
+python-dotenv==1.1.*
