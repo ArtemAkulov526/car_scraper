@@ -4,7 +4,7 @@ from sqlalchemy.exc import IntegrityError
 from dotenv import load_dotenv
 from models import Cars
 import logging
-from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
+import os
 
 load_dotenv()
 Base = declarative_base()
@@ -19,11 +19,11 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-DB_NAME = load_dotenv("DB_NAME")
-DB_USER = load_dotenv("DB_USER")
-DB_HOST = load_dotenv("DB_HOST") 
-DB_PORT = load_dotenv("DB_PORT")
-DB_PASSWORD = load_dotenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
+DB_USER = os.getenv("DB_USER")
+DB_HOST = os.getenv("DB_HOST") 
+DB_PORT = os.getenv("DB_PORT")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
 
 DATABASE_URL = "postgresql+asyncpg://DB_USER:DB_PASSWORD@db:5432/DB_NAME"
 
